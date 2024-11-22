@@ -1,3 +1,17 @@
+export const dynamicParams = true;
+
+export async function generateStaticParams() {
+  try {
+    const { blogs } = await fetchBlogs(1, 100);
+    const paths = blogs.map((blog) => ({ slug: blog.slug || '' }));
+
+    return paths;
+  } catch (error) {
+    console.error('Failed to generate static params:', error);
+    return [];
+  }
+}
+
 import BlogCard from '@/components/blog/BlogCard';
 import Image from 'next/image';
 import { Clock } from 'lucide-react';
@@ -11,22 +25,6 @@ import { Blog } from '@/types/blog';
 type Params = Promise<{ slug: string }>;
 
 // export const dynamic = 'force-dynamic';
-
-export const dynamicParams = true;
-
-export async function generateStaticParams() {
-  try {
-    const { blogs } = await fetchBlogs(1, 100);
-    const paths = blogs.map((blog) => ({ slug: blog.slug || '' }));
-
-    return paths.map((param: { slug: string }) => ({
-      params: param,
-    }));
-  } catch (error) {
-    console.error('Failed to generate static params:', error);
-    return [];
-  }
-}
 
 export default async function BlogDetails(props: { params: Params }) {
   const params = await props.params;
