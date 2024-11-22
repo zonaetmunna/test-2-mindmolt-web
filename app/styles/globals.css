@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 211 81% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 300 2% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 300 2% 11%;
+    --primary: 207 100% 40%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 211 81% 10%;
+    --secondary-foreground: 0 0% 100%;
+    --tertiary: 212 100% 94%;
+    --tertiary-foreground: 207 100% 40%;
+    --muted: 208 84% 24%;
+    --muted-foreground: 211 81% 10%;
+    --accent: 156 100% 99%;
+    --accent-foreground: 211 81% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 205 98% 74%;
+    --input: 0 1% 47%;
+    --ring: 240 10% 3.9%;
+    --shadow: 200 97% 74% / 30%;
+    --text-shadow: 200 97% 74% / 30%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .sb {
+    @apply border;
+  }
+  .sb2 {
+    @apply border border-red-500;
+  }
+
+  /* .container {
+    margin: 0 auto;
+    max-width: 1640px; 
+    padding-top:20px;
+    padding-bottom:20px;
+    padding-right:10px;
+    padding-left:10px;
+    width: 100%;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-top:20px;
+      padding-bottom:20px;
+      padding-right:10px;
+      padding-left:10px;
+      
+    }
+  }
+  
+  @media (min-width: 960px) {
+    .container {
+      padding-top:20px;
+      padding-bottom:20px;
+      padding-right:10px;
+      padding-left:10px;
+    }
+  } */
+}

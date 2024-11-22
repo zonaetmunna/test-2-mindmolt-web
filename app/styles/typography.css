@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply overflow-x-hidden bg-background text-foreground font-noto_serif_jp;
+  }
+
+  h1 {
+    @apply mb-4 text-[28px] font-figtree font-bold text-foreground md:text-[28px] md:leading-normal lg:text-5xl lg:font-bold leading-tight;
+  }
+  h2 {
+    @apply mb-6 mt-3 text-2xl font-figtree font-bold leading-tight;
+  }
+  h3 {
+    @apply mb-8 text-2xl font-figtree font-bold leading-normal text-primary md:text-[28px] md:leading-normal lg:text-5xl lg:font-bold lg:leading-tight;
+  }
+  h4 {
+    @apply mt-4 font-figtree text-[28px] font-bold;
+  }
+  h5 {
+    @apply mt-4 font-figtree text-2xl;
+  }
+  h6 {
+    @apply font-figtree text-lg;
+  }
+  p {
+    @apply text-base leading-tight;
+  }
+  li {
+    @apply list-none text-base;
+  }
+  small {
+    @apply text-sm md:text-sm;
+  }
+}
