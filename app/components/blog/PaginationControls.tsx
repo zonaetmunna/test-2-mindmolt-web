@@ -1,6 +1,6 @@
 'use client';
 import { FC } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 
 interface PaginationControlsProps {
   currentPage: number;
@@ -12,15 +12,12 @@ const PaginationControls: FC<PaginationControlsProps> = ({
   totalPages,
 }) => {
   const router = useRouter();
-  const searchParams = useSearchParams();
-
-  const page = parseInt(searchParams.get('page') ?? '1');
-  const per_page = parseInt(searchParams.get('per_page') ?? '5');
 
   const changePage = (newPage: number) => {
     // Ensure the page is within the allowed range
+    console.log('newPage:', newPage);
     if (newPage >= 1 && newPage <= totalPages) {
-      router.push(`/blogs?page=${newPage}`);
+      router.push(`/blogs/all/${newPage}`);
     }
   };
 
